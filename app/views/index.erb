@@ -1,0 +1,17 @@
+<ul>
+  
+  <form action="/peeps" method="post">
+    Name: <input type="text" name="name">
+    Chandle: <input type="text" name="chandle">
+    Content: <input type="text" name="content">
+    <input type="submit" value="Add peep">
+  </form>
+
+  <% @peeps.each do |peep| %>
+    <li>
+    	<h3><%=peep.name %> <span><%=peep.chandle %></span></h3>
+    	<p><%=peep.content %></p>
+    </li>
+  <% end %>
+
+</ul>
