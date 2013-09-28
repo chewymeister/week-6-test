@@ -1,11 +1,16 @@
 <ul>
-  
   <form action="/peeps" method="post">
-    Name: <input type="text" name="name">
+    Name:	 	 <input type="text" name="name">
     Chandle: <input type="text" name="chandle">
     Content: <input type="text" name="content">
-    <input type="submit" value="Add peep">
+   					 <input type="submit" value="Add peep">
   </form>
+  
+  <% if current_user %>
+  <p>Welcome, <%= current_user.chandle %>!</p>
+  <% else %>
+  <p>Don't forget to sign up or sign in!</p>
+  <% end %>
 
   <% @peeps.each do |peep| %>
     <li>
@@ -13,5 +18,4 @@
     	<p><%=peep.content %></p>
     </li>
   <% end %>
-
 </ul>
