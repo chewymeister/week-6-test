@@ -7,7 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/users' do
-    @user = User.create(:email => params[:email],
+    @user = User.create(:email => params[:email], 
     :name => params[:name],
     :chandle => params[:chandle],
     :password => params[:password],
@@ -21,4 +21,6 @@ class Chitter < Sinatra::Base
     erb :"users/new"
     end
   end
+
+  
 end

@@ -22,6 +22,14 @@ After do |scenario|
   DatabaseCleaner.clean
 end
 
+Before('@sign_in_out') do 
+	User.create(:email => "test@test.com",
+              :password => 'test', 
+              :password_confirmation => 'test',
+              :chandle => '£test',
+              :name => 'Test Test')
+end
+
 class ChitterWorld
   include Capybara::DSL
   include RSpec::Expectations

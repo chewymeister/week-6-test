@@ -7,9 +7,13 @@
   </form>
   
   <% if current_user %>
-  <p>Welcome, <%= current_user.chandle %>!</p>
+    <p>Welcome, <%= current_user.chandle %>!</p>
+    <form method="post" action="/sessions">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Sign out">
+    </form>
   <% else %>
-  <p>Don't forget to sign up or sign in!</p>
+    <p>Don't forget to sign up or sign in!</p>
   <% end %>
 
   <% @peeps.each do |peep| %>

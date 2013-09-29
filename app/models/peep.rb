@@ -8,6 +8,5 @@ class Peep
 	property :chandle, String
 	property :content, String
 	property :created_at, DateTime
-	
 
 end

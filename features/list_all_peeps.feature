@@ -14,6 +14,4 @@ Feature: List all peeps
 			| name    | chandle      | content                             |
 			| Srik    | Srikster     | Makers Academy is awesome!          |
 			| Enrique | Ecomba       | Can't wait for Friday to be over... |
-			| Jon     | Chewymeister | Can't wait to start JavaScript!     |
-
-
+			| Jon     | Chewymeister | Can't wait to start JavaScript!     |	
