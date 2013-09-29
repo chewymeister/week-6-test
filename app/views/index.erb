@@ -1,19 +1,23 @@
 <ul>
-  <form action="/peeps" method="post">
-    Name:	 	 <input type="text" name="name">
-    Chandle: <input type="text" name="chandle">
-    Content: <input type="text" name="content">
-   					 <input type="submit" value="Add peep">
-  </form>
-  
+  <% if current_user %>
+    <div id="new-peep">
+      <form action="/peeps" method="post">
+        <input type="hidden" name="name" value="<%=current_user.name %>">
+        <input type="hidden" name="chandle" value="<%=current_user.chandle %>">
+        Content: <input type="text" name="content">
+       					 <input type="submit" value="Add peep">
+      </form>
+    </div>
+  <% else %>
+    <p>Sign in to peep to the world!</p>
+  <% end %>
+
   <% if current_user %>
     <p>Welcome, <%= current_user.chandle %>!</p>
-    <form method="post" action="/sessions">
+    <form action="/sessions" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Sign out">
     </form>
-  <% else %>
-    <p>Don't forget to sign up or sign in!</p>
   <% end %>
 
   <% @peeps.each do |peep| %>

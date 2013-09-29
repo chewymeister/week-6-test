@@ -18,7 +18,7 @@ class Chitter < Sinatra::Base
   end
 
   delete '/sessions' do
-    flash[:notice] = "Good bye!"
+    flash[:notice] = "Good bye! #{current_user.chandle}"
     session[:user_id] = nil
     redirect to('/')
   end

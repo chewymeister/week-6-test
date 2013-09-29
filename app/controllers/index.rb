@@ -6,4 +6,6 @@ class Chitter < Sinatra::Base
     @current_user = session[:user]
     erb :index
   end
+
+  
 end
